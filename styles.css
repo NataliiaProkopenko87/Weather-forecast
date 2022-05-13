@@ -66,3 +66,7 @@ div.weather {
 div.forecast {
   margin: 20px;
 }
+.small {
+  display: block;
+  text-align: center;
+}
