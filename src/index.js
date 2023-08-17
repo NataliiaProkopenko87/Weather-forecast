@@ -82,3 +82,45 @@ function showCurrentWeather(response) {
 }
 
 document.querySelector(".input-btn").addEventListener("click", currentPosition);
+//select cities
+function weatherKyiv(event) {
+  event.preventDefault();
+  let headingCity = document.querySelector("#heading-city"); 
+  let cityKyiv = document.querySelector("#kyiv");
+  headingCity.innerHTML = cityKyiv.value;
+  citiesWeather(cityKyiv.value);
+}
+document.querySelector("#kyiv").addEventListener("click",weatherKyiv);
+
+function weatherWroclaw(event) {
+  event.preventDefault();
+  let headingCity = document.querySelector("#heading-city"); 
+  let cityWroclaw = document.querySelector("#wroclaw");
+  headingCity.innerHTML = cityWroclaw.value;
+  citiesWeather(cityWroclaw.value);
+}
+document.querySelector("#wroclaw").addEventListener("click",weatherWroclaw);
+
+function weatherSanremo(event) {
+  event.preventDefault();
+  let headingCity = document.querySelector("#heading-city"); 
+  let citySanremo = document.querySelector("#sanremo");
+  headingCity.innerHTML = citySanremo.value;
+  citiesWeather(citySanremo.value);
+}
+document.querySelector("#sanremo").addEventListener("click",weatherSanremo);
+
+function weatherAlicante(event) {
+  event.preventDefault();
+  let headingCity = document.querySelector("#heading-city"); 
+  let cityAlicante = document.querySelector("#alicante");
+  headingCity.innerHTML = cityAlicante.value;
+  citiesWeather(cityAlicante.value);
+}
+document.querySelector("#alicante").addEventListener("click",weatherAlicante);
+//cities weather
+function citiesWeather(cities) {
+  let apiKey = "d2c2ea35d1cdabb51672d9219b227afa";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cities}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
