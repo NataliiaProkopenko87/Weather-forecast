@@ -20,13 +20,15 @@ p.emoji {
   margin: 20px 10px;
 }
 
-.cities a {
+.cities button {
   text-decoration: none;
   font-size: 18px;
-  margin: 20px;
+  margin: 15px;
   color: #ececec;
+  border: none;
+  background: transparent;
 }
-.cities a:hover {
+.cities button:hover {
   color: #f8da5b;
 }
 .input-group {
